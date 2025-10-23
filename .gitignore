@@ -1,40 +1,38 @@
 # Dependencies
 /node_modules
-/client/node_modules  # Mengabaikan node_modules di dalam client
-/server/node_modules  # Mengabaikan node_modules di dalam server
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
+/client/node_modules
+/server/node_modules
 
 # Build output
-/dist
-/build
-/out
+/client/dist          # Output build untuk proyek client (Vite/React)
+/server/dist          # Output build untuk proyek server (jika ada)
 
-# Environment variables and config files
+# Configuration Files (Environment Variables)
 .env
-/client/.env  # Mengabaikan file .env di client
-/server/.env  # Mengabaikan file .env di server
+/client/.env
+/server/.env
 
-# Local development files and artifacts
-.DS_Store
-*.log
-
-# Client-specific files (e.g., Vite/React cache)
-/client/.vite
-/client/dist
-/client/.netlify
-
-# Server-specific files (e.g., common for Node.js/Express)
-/server/dist
-
-# Editor/IDE specific files (VS Code)
-.vscode/
-
-# Package files
-package-lock.json
+# Lock files (Opsional, tergantung preferensi)
+# Biasanya package-lock.json dilacak, tetapi Anda mungkin ingin mengabaikannya jika memiliki banyak sub-package.
+# Jika Anda menggunakan Yarn atau pnpm:
+yarn.lock
+pnpm-lock.yaml
 /client/package-lock.json
 /server/package-lock.json
+
+# Local and Temporary Files
+.DS_Store
+*.log
+npm-debug.log*
+
+# IDE/Editor Files (VS Code)
+.vscode/
+
+# Client Specific Ignored Files (Vite/React)
+/client/.vite
+/client/temp
+
+# Server Specific Ignored Files (Database/Uploads)
+# Hapus baris ini jika Anda ingin meng-commit folder uploads
+/server/uploads
+/server/logs
